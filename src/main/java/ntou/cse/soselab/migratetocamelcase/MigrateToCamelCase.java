@@ -24,15 +24,7 @@ public class MigrateToCamelCase extends Recipe {
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
-        return new JavaIsoVisitor<>() {
-          @Override
-          public J.CompilationUnit visitCompilationUnit(J.CompilationUnit compilationUnit, ExecutionContext executionContext) {
-              // Use TreeVisitingPrinter to print LST
-              String outputLst = TreeVisitingPrinter.printTree(getCursor());
-              System.out.println(outputLst);
-              return super.visitCompilationUnit(compilationUnit, executionContext);
-          }
-        };
+        return new MigrateToCamelCaseVisitor();
     }
 
     // JavaIsoVisitor 可以產生與 input 相同的樹，可以對 source code 進行更改
