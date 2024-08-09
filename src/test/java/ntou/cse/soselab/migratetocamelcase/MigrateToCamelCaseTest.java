@@ -15,7 +15,7 @@ class MigrateToCamelCaseTest implements RewriteTest {
     }
 
     @Test
-    void forTest() {
+    void testMethod() {
         rewriteRun(
                 java(
                         """
@@ -23,7 +23,7 @@ class MigrateToCamelCaseTest implements RewriteTest {
                                     int test_case() {
                                         int helloWorld = 21;
                                         return 1;
-                                    } 
+                                    }
                                 }
                                 """,
                         """
@@ -31,12 +31,55 @@ class MigrateToCamelCaseTest implements RewriteTest {
                                     int testCase() {
                                         int helloWorld = 21;
                                         return 1;
-                                    } 
+                                    }
                                 }
                                 """
                 )
         );
     }
+
+//    @Test
+//    void testMethod2() {
+//        rewriteRun(
+//                java(
+//                        """
+//                                class A {
+//                                    String THE_WEATHER() {
+//                                        return "sunny";
+//                                    }
+//                                }
+//                                """,
+//                        """
+//                                class A {
+//                                    String theWeather() {
+//                                        return "sunny";
+//                                    }
+//                                }
+//                                """
+//                )
+//        );
+//    }
+//    @Test
+//    void testMethod3() {
+//        rewriteRun(
+//                java(
+//                        """
+//                                class B {
+//                                    Boolean chatGPT() {
+//                                        return "sunny";
+//                                    }
+//                                }
+//                                """,
+//                        """
+//                                class B {
+//                                    Boolean chatGpt() {
+//                                        return "sunny";
+//                                    }
+//                                }
+//                                """
+//                )
+//        );
+//    }
 
 
 }
