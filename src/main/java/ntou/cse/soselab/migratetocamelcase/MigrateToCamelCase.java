@@ -25,25 +25,31 @@ public class MigrateToCamelCase extends Recipe {
     public TreeVisitor<?, ExecutionContext> getVisitor() {
         return new JavaIsoVisitor<>() {
             @Override
-            public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
-                J.MethodDeclaration m = super.visitMethodDeclaration(methodDeclaration, executionContext);
-                String name = m.getName().getSimpleName();
+            public J.VariableDeclarations.NamedVariable visitVariable (J.VariableDeclarations.NamedVariable namedVariable, ExecutionContext executionContext) {
+                J.VariableDeclarations.NamedVariable n = super.visitVariable(namedVariable, executionContext);
+                String name = n.getName().getSimpleName();
+                String newName = "";
 
                 if (!isCamelCase(name)) {
-                    name = toCamelCase(name);
+                    newName = toCamelCase(name);
                 }
+
                 if (getCursor().getMessage("change", 1) != 0) {
-                    return m.withName(methodDeclaration.getName().withSimpleName(name))
-                            .withMethodType(m.getMethodType().withName(name));
+                    System.out.println("pass");
+                    J.VariableDeclarations.NamedVariable updatedVariable =
+                            n.withName(namedVariable.getName().withSimpleName(newName))
+                                    .withVariableType(n.getVariableType().withName(newName));
+
+                    return updatedVariable;
                 }
-                return m;
+                return super.visitVariable(namedVariable, executionContext);
             }
 
             @Override
             public J.Literal visitLiteral(J.Literal literal, ExecutionContext executionContext) {
                 Object value = literal.getValue();
                 if (value instanceof Integer) {
-                    Cursor method = getCursor().dropParentUntil(J.MethodDeclaration.class::isInstance);
+                    Cursor method = getCursor().dropParentUntil(J.VariableDeclarations.NamedVariable.class::isInstance);
                     method.putMessage("change", 1);
                 }
                 return super.visitLiteral(literal, executionContext);

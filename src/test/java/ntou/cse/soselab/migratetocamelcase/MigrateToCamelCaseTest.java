@@ -21,14 +21,14 @@ class MigrateToCamelCaseTest implements RewriteTest {
                         """
                                 class A {
                                     int test_case() {
-                                        int helloWorld = 21;
+                                        int hello_World = 21;
                                         return 1;
                                     } 
                                 }
                                 """,
                         """
                                 class A {
-                                    int testCase() {
+                                    int test_case() {
                                         int helloWorld = 21;
                                         return 1;
                                     } 
