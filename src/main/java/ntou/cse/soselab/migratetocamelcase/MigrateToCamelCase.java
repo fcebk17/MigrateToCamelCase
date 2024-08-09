@@ -25,39 +25,29 @@ public class MigrateToCamelCase extends Recipe {
     public TreeVisitor<?, ExecutionContext> getVisitor() {
         return new JavaIsoVisitor<>() {
             @Override
-            public J.VariableDeclarations visitVariableDeclarations(J.VariableDeclarations variableDeclarations, ExecutionContext executionContext) {
-                J.VariableDeclarations v = super.visitVariableDeclarations(variableDeclarations, executionContext);
-                List<J.VariableDeclarations.NamedVariable> updateVariables = new ArrayList<>(v.getVariables());
+            public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+                J.MethodDeclaration m = super.visitMethodDeclaration(methodDeclaration, executionContext);
+                String name = m.getName().getSimpleName();
 
-                for (J.VariableDeclarations.NamedVariable variable :v.getVariables()) {
-                    String name = variable.getSimpleName();
-
-                    if (!isCamelCase(name)) {
-                        name = toCamelCase(name);
-                    }
-
-                    J.Identifier i = variable.getName().withSimpleName(name);
-
-                    updateVariables.add(variable.withName(i));
-
+                if (!isCamelCase(name)) {
+                    name = toCamelCase(name);
                 }
-
-
-                if (getCursor().getMessage("change") != null) {
-                    return v.withVariables(updateVariables);
+                if (getCursor().getMessage("change", 1) != 0) {
+                    return m.withName(methodDeclaration.getName().withSimpleName(name))
+                            .withMethodType(m.getMethodType().withName(name));
                 }
-
-
-                return v.withVariables(updateVariables);
+                return m;
             }
 
             @Override
-            public  J.VariableDeclarations.NamedVariable visitVariable(J.VariableDeclarations.NamedVariable ident, ExecutionContext executionContext) {
-                getCursor().putMessage("change", 1);
-                return super.visitVariable(ident, executionContext);
+            public J.Literal visitLiteral(J.Literal literal, ExecutionContext executionContext) {
+                Object value = literal.getValue();
+                if (value instanceof Integer) {
+                    Cursor method = getCursor().dropParentUntil(J.MethodDeclaration.class::isInstance);
+                    method.putMessage("change", 1);
+                }
+                return super.visitLiteral(literal, executionContext);
             }
-
-
         };
     }
 
