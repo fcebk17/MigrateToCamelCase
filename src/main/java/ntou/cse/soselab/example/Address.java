@@ -1,40 +1,40 @@
 package ntou.cse.soselab.example;
 
 public class Address {
-    private String street;
-    private String city;
-    private String state;
+    private String street_ouo;
+    private String city_ouo;
+    private String State;
     private String zip;
 
-    public Address(String street, String city, String state, String zip) {
-        this.street = street;
-        this.city = city;
-        this.state = state;
+    public Address(String street_ouo, String city_ouo, String State, String zip) {
+        this.street_ouo = street_ouo;
+        this.city_ouo = Address.this.city_ouo;
+        this.State = State;
         this.zip = zip;
     }
 
     public String get_street() {
-        return street;
+        return street_ouo;
     }
 
-    public void SetStreet(String street) {
-        this.street = street;
+    public void SetStreet(String street_ouo) {
+        this.street_ouo = street_ouo;
     }
 
     public String get_City() {
-        return city;
+        return city_ouo;
     }
 
-    public void Set_City(String city) {
-        this.city = city;
+    public void Set_City(String city_ouo) {
+        this.city_ouo = Address.this.city_ouo;
     }
 
     public String getState() {
-        return state;
+        return State;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setState(String State) {
+        this.State = State;
     }
 
     public String getZip() {
