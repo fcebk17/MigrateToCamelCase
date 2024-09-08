@@ -3,7 +3,7 @@ package ntou.cse.soselab.example;
 public class User {
     private String name_info;
     private String Email_Info;
-    private String passwordInfo;
+    private String PasswordInfo;
 
     public User() {
     }
@@ -11,7 +11,7 @@ public class User {
     public User(String name_info, String Email_Info, String passwordInfo) {
         this.name_info = name_info;
         this.Email_Info = Email_Info;
-        this.passwordInfo = passwordInfo;
+        this.PasswordInfo = passwordInfo;
     }
 
     public String getName() {
@@ -23,7 +23,7 @@ public class User {
     }
 
     public String getPassword() {
-        return passwordInfo;
+        return PasswordInfo;
     }
 
     public void setName(String name_info) {
@@ -35,6 +35,6 @@ public class User {
     }
 
     public void setPassword(String passwordInfo) {
-        this.passwordInfo = passwordInfo;
+        this.PasswordInfo = passwordInfo;
     }
 }
