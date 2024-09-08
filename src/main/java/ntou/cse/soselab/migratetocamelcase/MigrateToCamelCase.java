@@ -61,7 +61,7 @@ public class MigrateToCamelCase extends Recipe {
             }
 
             @Override
-            public @Nullable J postVisit(J tree, ExecutionContext ctx) {
+            public @Nullable J postVisit(J tree, ExecutionContext ctx) { // postVisit 會在所有子節點都被訪問後被調用
                 if (tree instanceof JavaSourceFile) {
                     JavaSourceFile cu = (JavaSourceFile) tree;
                     Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = getCursor().getMessage("RENAME_VARIABLE_KEY", emptyMap());
@@ -71,8 +71,9 @@ public class MigrateToCamelCase extends Recipe {
                         J.VariableDeclarations.NamedVariable variable = entry.getKey();
                         String newName = entry.getValue();
                         if (shouldRename(hasNameSet, variable, newName)) {
-                            cu = (JavaSourceFile) new RenameVariable<>(variable, newName).visitNonNull(cu, ctx);
-                            hasNameSet.add(computeKey(newName, variable));
+                            cu = (JavaSourceFile) new RenameVariable<>(variable, newName).visitNonNull(cu, ctx); // 遍歷所有節點，將變數名稱改為新名稱
+                            // RenameVariable 是一個 OpenRewrite Visitor，用於重命名變數
+                            hasNameSet.add(computeKey(newName, variable)); // 添加變數型態與名稱於 set 中
                         }
                     }
                     return cu;
@@ -80,26 +81,26 @@ public class MigrateToCamelCase extends Recipe {
                 return super.postVisit(tree, ctx);
             }
 
-            private void renameVariable(J.VariableDeclarations.NamedVariable variable, String newName) {
+            private void renameVariable(J.VariableDeclarations.NamedVariable variable, String newName) { // 重命名變數
                 getSourceFileCursor()
                         .computeMessageIfAbsent("RENAME_VARIABLE_KEY", k -> new LinkedHashMap<>())
                         .put(variable, newName);
             }
 
-            private void hasNameKey(String variableName) {
+            private void hasNameKey(String variableName) { // 檢查是否有重複的名稱
                 getSourceFileCursor()
                         .computeMessageIfAbsent("HAS_NAME_KEY", k -> new HashSet<>())
                         .add(variableName);
             }
 
-            private boolean shouldRename(Set<String> hasNameSet, J.VariableDeclarations.NamedVariable variable, String toName) {
+            private boolean shouldRename(Set<String> hasNameSet, J.VariableDeclarations.NamedVariable variable, String toName) { // 檢查是否有重複的名稱
                 if (toName.isEmpty() || !Character.isAlphabetic(toName.charAt(0))) {
                     return false;
                 }
                 return isAvailableIdentifier(toName, variable, hasNameSet);
             }
 
-            private boolean isAvailableIdentifier(String identifier, J context, Set<String> hasNameSet) {
+            private boolean isAvailableIdentifier(String identifier, J context, Set<String> hasNameSet) { // 檢查是否有重複的名稱
                 if (hasNameSet.contains(identifier)) {
                     return false;
                 }
@@ -122,15 +123,15 @@ public class MigrateToCamelCase extends Recipe {
                 return true;
             }
 
-            private String computeKey(String identifier, J context) {
+            private String computeKey(String identifier, J context) { //我要思考一下，感覺是回傳變數型態 + 名稱
                 JavaType.Variable fieldType = getFieldType(context);
-                if (fieldType != null && fieldType.getOwner() != null) {
+                if (fieldType != null && fieldType.getOwner() != null) { // int a = 1; 這裡的 fieldType 是 int
                     return fieldType.getOwner() + " " + identifier;
                 }
                 return identifier;
             }
 
-            private @Nullable JavaType.Variable getFieldType(J tree) {
+            private @Nullable JavaType.Variable getFieldType(J tree) { // 取得變數類型
                 if (tree instanceof J.Identifier) {
                     return ((J.Identifier) tree).getFieldType();
                 }
