@@ -134,10 +134,9 @@
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>5.30.0</version>
+                <version>5.43.0</version>
                 <configuration>
                     <activeRecipes>
-                        <recipe>ntou.cse.soselab.migratetocamelcase.MigrateToCamelCase</recipe>
                         <recipe>ntou.cse.soselab.migratetocamelcase.FindSpringDependencies</recipe>
                     </activeRecipes>
                 </configuration>
