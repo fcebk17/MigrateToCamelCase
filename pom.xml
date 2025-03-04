@@ -138,6 +138,7 @@
                 <configuration>
                     <activeRecipes>
                         <recipe>ntou.cse.soselab.migratetocamelcase.MigrateToCamelCase</recipe>
+                        <recipe>ntou.cse.soselab.migratetocamelcase.FindSpringDependencies</recipe>
                     </activeRecipes>
                 </configuration>
                 <dependencies>

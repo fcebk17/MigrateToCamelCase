@@ -1,41 +1,41 @@
 package ntou.cse.soselab.example;
 
 public class User {
-    private String name_info;
-    private String Email_Info;
-    private String PasswordInfo;
+    private String nameInfo;
+    private String emailInfo;
+    private String passwordInfo;
     private String ID;
 
     public User() {
     }
 
     public User(String name_info, String Email_Info, String passwordInfo) {
-        this.name_info = name_info;
-        this.Email_Info = Email_Info;
-        this.PasswordInfo = passwordInfo;
+        this.nameInfo = name_info;
+        this.emailInfo = Email_Info;
+        this.passwordInfo = passwordInfo;
     }
 
     public String getName() {
-        return name_info;
+        return nameInfo;
     }
 
     public String getEmail() {
-        return Email_Info;
+        return emailInfo;
     }
 
     public String getPassword() {
-        return PasswordInfo;
+        return passwordInfo;
     }
 
     public void setName(String name_info) {
-        this.name_info = name_info;
+        this.nameInfo = name_info;
     }
 
     public void setEmail(String Email_Info) {
-        this.Email_Info = Email_Info;
+        this.emailInfo = Email_Info;
     }
 
     public void setPassword(String passwordInfo) {
-        this.PasswordInfo = passwordInfo;
+        this.passwordInfo = passwordInfo;
     }
 }
