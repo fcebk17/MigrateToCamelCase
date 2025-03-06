@@ -16,8 +16,8 @@ import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.app.security.JWTFilter;
-import com.app.services.UserDetailsServiceImpl;
+import ntou.cse.soselab.security.JWTFilter;
+import ntou.cse.soselab.services.UserDetailsServiceImpl;
 
 import jakarta.servlet.http.HttpServletResponse;
 

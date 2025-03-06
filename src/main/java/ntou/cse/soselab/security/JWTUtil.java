@@ -14,7 +14,7 @@ import com.auth0.jwt.interfaces.JWTVerifier;
 
 @Component
 public class JWTUtil {
-	
+
 	@Value("${jwt_secret}")
 	private String secret;
 
