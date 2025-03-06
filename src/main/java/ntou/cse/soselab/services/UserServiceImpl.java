@@ -1,4 +1,4 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,22 +13,22 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.app.config.AppConstants;
-import com.app.entites.Address;
-import com.app.entites.Cart;
-import com.app.entites.CartItem;
-import com.app.entites.Role;
-import com.app.entites.User;
-import com.app.exceptions.APIException;
-import com.app.exceptions.ResourceNotFoundException;
-import com.app.payloads.AddressDTO;
-import com.app.payloads.CartDTO;
-import com.app.payloads.ProductDTO;
-import com.app.payloads.UserDTO;
-import com.app.payloads.UserResponse;
-import com.app.repositories.AddressRepo;
-import com.app.repositories.RoleRepo;
-import com.app.repositories.UserRepo;
+import ntou.cse.soselab.config.AppConstants;
+import ntou.cse.soselab.entites.Address;
+import ntou.cse.soselab.entites.Cart;
+import ntou.cse.soselab.entites.CartItem;
+import ntou.cse.soselab.entites.Role;
+import ntou.cse.soselab.entites.User;
+import ntou.cse.soselab.exceptions.APIException;
+import ntou.cse.soselab.exceptions.ResourceNotFoundException;
+import ntou.cse.soselab.payloads.AddressDTO;
+import ntou.cse.soselab.payloads.CartDTO;
+import ntou.cse.soselab.payloads.ProductDTO;
+import ntou.cse.soselab.payloads.UserDTO;
+import ntou.cse.soselab.payloads.UserResponse;
+import ntou.cse.soselab.repositories.AddressRepo;
+import ntou.cse.soselab.repositories.RoleRepo;
+import ntou.cse.soselab.repositories.UserRepo;
 
 import jakarta.transaction.Transactional;
 

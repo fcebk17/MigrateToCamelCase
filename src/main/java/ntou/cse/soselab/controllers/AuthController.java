@@ -1,4 +1,4 @@
-package com.app.controllers;
+package ntou.cse.soselab.controllers;
 
 import java.util.Collections;
 import java.util.Map;

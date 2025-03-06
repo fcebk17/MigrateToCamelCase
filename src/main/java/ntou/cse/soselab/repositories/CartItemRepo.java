@@ -1,11 +1,11 @@
-package com.app.repositories;
+package ntou.cse.soselab.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import com.app.entites.CartItem;
-import com.app.entites.Product;
+import ntou.cse.soselab.entites.CartItem;
+import ntou.cse.soselab.entites.Product;
 
 public interface CartItemRepo extends JpaRepository<CartItem, Long>{
 	

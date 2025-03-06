@@ -1,7 +1,7 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
-import com.app.payloads.UserDTO;
-import com.app.payloads.UserResponse;
+import ntou.cse.soselab.payloads.UserDTO;
+import ntou.cse.soselab.payloads.UserResponse;
 
 public interface UserService {
 	UserDTO registerUser(UserDTO userDTO);

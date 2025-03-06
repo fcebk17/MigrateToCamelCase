@@ -1,9 +1,9 @@
-package com.app.repositories;
+package ntou.cse.soselab.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.app.entites.Address;
+import ntou.cse.soselab.entites.Address;
 
 @Repository
 public interface AddressRepo extends JpaRepository<Address, Long> {

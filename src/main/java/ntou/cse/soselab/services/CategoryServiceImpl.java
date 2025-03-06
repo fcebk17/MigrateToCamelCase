@@ -1,4 +1,4 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,13 +11,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.app.entites.Category;
-import com.app.entites.Product;
-import com.app.exceptions.APIException;
-import com.app.exceptions.ResourceNotFoundException;
-import com.app.payloads.CategoryDTO;
-import com.app.payloads.CategoryResponse;
-import com.app.repositories.CategoryRepo;
+import ntou.cse.soselab.entites.Category;
+import ntou.cse.soselab.entites.Product;
+import ntou.cse.soselab.exceptions.APIException;
+import ntou.cse.soselab.exceptions.ResourceNotFoundException;
+import ntou.cse.soselab.payloads.CategoryDTO;
+import ntou.cse.soselab.payloads.CategoryResponse;
+import ntou.cse.soselab.repositories.CategoryRepo;
 
 import jakarta.transaction.Transactional;
 

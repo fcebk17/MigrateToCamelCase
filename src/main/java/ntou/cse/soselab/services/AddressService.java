@@ -1,9 +1,9 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.util.List;
 
-import com.app.entites.Address;
-import com.app.payloads.AddressDTO;
+import ntou.cse.soselab.entites.Address;
+import ntou.cse.soselab.payloads.AddressDTO;
 
 public interface AddressService {
 	

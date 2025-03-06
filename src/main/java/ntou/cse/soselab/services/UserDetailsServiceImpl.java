@@ -1,4 +1,4 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.util.Optional;
 
@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.app.config.UserInfoConfig;
-import com.app.entites.User;
-import com.app.exceptions.ResourceNotFoundException;
-import com.app.repositories.UserRepo;
+import ntou.cse.soselab.config.UserInfoConfig;
+import ntou.cse.soselab.entites.User;
+import ntou.cse.soselab.exceptions.ResourceNotFoundException;
+import ntou.cse.soselab.repositories.UserRepo;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

@@ -1,8 +1,8 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
-import com.app.entites.Category;
-import com.app.payloads.CategoryDTO;
-import com.app.payloads.CategoryResponse;
+import ntou.cse.soselab.entites.Category;
+import ntou.cse.soselab.payloads.CategoryDTO;
+import ntou.cse.soselab.payloads.CategoryResponse;
 
 public interface CategoryService {
 

@@ -1,4 +1,4 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,17 +14,17 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.app.entites.Cart;
-import com.app.entites.Category;
-import com.app.entites.Product;
-import com.app.exceptions.APIException;
-import com.app.exceptions.ResourceNotFoundException;
-import com.app.payloads.CartDTO;
-import com.app.payloads.ProductDTO;
-import com.app.payloads.ProductResponse;
-import com.app.repositories.CartRepo;
-import com.app.repositories.CategoryRepo;
-import com.app.repositories.ProductRepo;
+import ntou.cse.soselab.entites.Cart;
+import ntou.cse.soselab.entites.Category;
+import ntou.cse.soselab.entites.Product;
+import ntou.cse.soselab.exceptions.APIException;
+import ntou.cse.soselab.exceptions.ResourceNotFoundException;
+import ntou.cse.soselab.payloads.CartDTO;
+import ntou.cse.soselab.payloads.ProductDTO;
+import ntou.cse.soselab.payloads.ProductResponse;
+import ntou.cse.soselab.repositories.CartRepo;
+import ntou.cse.soselab.repositories.CategoryRepo;
+import ntou.cse.soselab.repositories.ProductRepo;
 
 import jakarta.transaction.Transactional;
 

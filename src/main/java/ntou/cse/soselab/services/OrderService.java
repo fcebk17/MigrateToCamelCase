@@ -1,9 +1,9 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.util.List;
 
-import com.app.payloads.OrderDTO;
-import com.app.payloads.OrderResponse;
+import ntou.cse.soselab.payloads.OrderDTO;
+import ntou.cse.soselab.payloads.OrderResponse;
 
 public interface OrderService {
 	

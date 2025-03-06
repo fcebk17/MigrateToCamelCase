@@ -1,12 +1,12 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.io.IOException;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.app.entites.Product;
-import com.app.payloads.ProductDTO;
-import com.app.payloads.ProductResponse;
+import ntou.cse.soselab.entites.Product;
+import ntou.cse.soselab.payloads.ProductDTO;
+import ntou.cse.soselab.payloads.ProductResponse;
 
 public interface ProductService {
 

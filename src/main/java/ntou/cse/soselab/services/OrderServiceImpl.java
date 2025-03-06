@@ -1,4 +1,4 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,23 +13,23 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.app.entites.Cart;
-import com.app.entites.CartItem;
-import com.app.entites.Order;
-import com.app.entites.OrderItem;
-import com.app.entites.Payment;
-import com.app.entites.Product;
-import com.app.exceptions.APIException;
-import com.app.exceptions.ResourceNotFoundException;
-import com.app.payloads.OrderDTO;
-import com.app.payloads.OrderItemDTO;
-import com.app.payloads.OrderResponse;
-import com.app.repositories.CartItemRepo;
-import com.app.repositories.CartRepo;
-import com.app.repositories.OrderItemRepo;
-import com.app.repositories.OrderRepo;
-import com.app.repositories.PaymentRepo;
-import com.app.repositories.UserRepo;
+import ntou.cse.soselab.entites.Cart;
+import ntou.cse.soselab.entites.CartItem;
+import ntou.cse.soselab.entites.Order;
+import ntou.cse.soselab.entites.OrderItem;
+import ntou.cse.soselab.entites.Payment;
+import ntou.cse.soselab.entites.Product;
+import ntou.cse.soselab.exceptions.APIException;
+import ntou.cse.soselab.exceptions.ResourceNotFoundException;
+import ntou.cse.soselab.payloads.OrderDTO;
+import ntou.cse.soselab.payloads.OrderItemDTO;
+import ntou.cse.soselab.payloads.OrderResponse;
+import ntou.cse.soselab.repositories.CartItemRepo;
+import ntou.cse.soselab.repositories.CartRepo;
+import ntou.cse.soselab.repositories.OrderItemRepo;
+import ntou.cse.soselab.repositories.OrderRepo;
+import ntou.cse.soselab.repositories.PaymentRepo;
+import ntou.cse.soselab.repositories.UserRepo;
 
 import jakarta.transaction.Transactional;
 

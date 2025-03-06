@@ -1,4 +1,4 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,13 +7,13 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.entites.Address;
-import com.app.entites.User;
-import com.app.exceptions.APIException;
-import com.app.exceptions.ResourceNotFoundException;
-import com.app.payloads.AddressDTO;
-import com.app.repositories.AddressRepo;
-import com.app.repositories.UserRepo;
+import ntou.cse.soselab.entites.Address;
+import ntou.cse.soselab.entites.User;
+import ntou.cse.soselab.exceptions.APIException;
+import ntou.cse.soselab.exceptions.ResourceNotFoundException;
+import ntou.cse.soselab.payloads.AddressDTO;
+import ntou.cse.soselab.repositories.AddressRepo;
+import ntou.cse.soselab.repositories.UserRepo;
 
 import jakarta.transaction.Transactional;
 

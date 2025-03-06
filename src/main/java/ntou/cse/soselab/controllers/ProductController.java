@@ -1,4 +1,4 @@
-package com.app.controllers;
+package ntou.cse.soselab.controllers;
 
 import java.io.IOException;
 

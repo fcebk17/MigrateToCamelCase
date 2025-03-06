@@ -1,9 +1,9 @@
-package com.app.repositories;
+package ntou.cse.soselab.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.app.entites.Category;
+import ntou.cse.soselab.entites.Category;
 
 @Repository
 public interface CategoryRepo extends JpaRepository<Category, Long> {

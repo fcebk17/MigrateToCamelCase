@@ -1,8 +1,8 @@
-package com.app.services;
+package ntou.cse.soselab.services;
 
 import java.util.List;
 
-import com.app.payloads.CartDTO;
+import ntou.cse.soselab.payloads.CartDTO;
 
 public interface CartService {
 	
