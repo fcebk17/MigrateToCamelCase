@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.app.config.AppConstants;
-import com.app.entites.Product;
-import com.app.payloads.ProductDTO;
-import com.app.payloads.ProductResponse;
-import com.app.services.ProductService;
+import ntou.cse.soselab.config.AppConstants;
+import ntou.cse.soselab.entites.Product;
+import ntou.cse.soselab.payloads.ProductDTO;
+import ntou.cse.soselab.payloads.ProductResponse;
+import ntou.cse.soselab.services.ProductService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;

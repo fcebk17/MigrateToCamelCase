@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.config.AppConstants;
-import com.app.entites.Category;
-import com.app.payloads.CategoryDTO;
-import com.app.payloads.CategoryResponse;
-import com.app.services.CategoryService;
+import ntou.cse.soselab.config.AppConstants;
+import ntou.cse.soselab.entites.Category;
+import ntou.cse.soselab.payloads.CategoryDTO;
+import ntou.cse.soselab.payloads.CategoryResponse;
+import ntou.cse.soselab.services.CategoryService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;

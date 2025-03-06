@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.exceptions.UserNotFoundException;
-import com.app.payloads.LoginCredentials;
-import com.app.payloads.UserDTO;
-import com.app.security.JWTUtil;
-import com.app.services.UserService;
+import ntou.cse.soselab.exceptions.UserNotFoundException;
+import ntou.cse.soselab.payloads.LoginCredentials;
+import ntou.cse.soselab.payloads.UserDTO;
+import ntou.cse.soselab.security.JWTUtil;
+import ntou.cse.soselab.services.UserService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;

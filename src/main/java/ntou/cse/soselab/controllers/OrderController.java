@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.config.AppConstants;
-import com.app.payloads.OrderDTO;
-import com.app.payloads.OrderResponse;
-import com.app.services.OrderService;
+import ntou.cse.soselab.config.AppConstants;
+import ntou.cse.soselab.payloads.OrderDTO;
+import ntou.cse.soselab.payloads.OrderResponse;
+import ntou.cse.soselab.services.OrderService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 

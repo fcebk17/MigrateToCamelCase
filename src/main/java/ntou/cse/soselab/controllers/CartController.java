@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.payloads.CartDTO;
-import com.app.services.CartService;
+import ntou.cse.soselab.payloads.CartDTO;
+import ntou.cse.soselab.services.CartService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
